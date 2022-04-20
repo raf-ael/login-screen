@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Inconsolata", sans-serif;
+}
+
+body {
+    background: #0000EE;
+    color: white;
+    font-weight: 500;
+    display: flex;
+
+    /*Padronização.*/
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    /*Modifica eixo x.*/
+    flex-direction: column;
+    /*Modifica eixo y.*/
+    align-items: center;
+    justify-content: center;
+}
+
+main h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+main .social-media {
+    display: flex;
+    align-content: center;
+}
+
+main .social-media {
+    text-decoration: none;
+}
+
+main .social-media img {
+    width: 36px;
+    margin-left: 3rem;
+}
+
+/*Altera elemento específico dentro de uma classe.*/
+main .social-media a:first-child img {
+    margin-left: 0;
+}
+
+main .alternative {
+    margin-top: 1rem;
+}
+
+main .alternative span {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: white;
+    position: relative;
+}
+
+/*Linhas laterais do OR.*/
+main .alternative span::before, main .alternative span::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 100px;
+    bottom: 50%;
+    right: 50px;
+    background: white;
+}
+
+main .alternative span::after {
+    left: 50px;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main form label {
+    display: flex;
+    flex-direction: column;
+}
+
+main form label span {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+
+main form input {
+    background: #0000CD;
+    width: 300px;
+    height: 50px;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    border: 1px solid 	#00008B;
+    border-radius: 8px;
+}
+
+/*Seletor específico pro botão.*/
+main form input[type="submit"] {
+    cursor: pointer;
+    width: 50%;
+    margin-top: 4rem;
+    border: none;
+    border-radius: 32px;
+    background: #0000CD;
+    color: white;
+    font-size: 1.1rem;
+    /*Mudar a cor do hover de forma gradual.*/
+    transition: all .3s ease-in-out
+}
+
+main form input[type="submit"]:hover {
+    background: #00008B;
+}
+
+/*Círculo.*/
+section .circle {
+    /*Ocupa todo espaço da tela.*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(88deg, #1E90FF, white);
+    /*Recorta a camada e posiciona num determinado lugar.*/
+    clip-path: circle(40% at right 90%);
+    /*Sobrepõe os elementos, e só funciona com elementos com position estabelecida.*/
+    z-index: -1;
+}
+
+/*Aplicação da responsividade.*/
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+    section .circle {
+        background: linear-gradient(22deg, #1E90FF);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    section .circle {
+        display: none;
+        visibility: hidden;
+    }
+
+    main {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main h1 {
+        font-size: 2rem;
+    }
+
+    main .social-media img {
+        width: 0.7cm;
+    }
+
+    main .alternative span {
+        font-size: 0.8rem;
+    }
+
+    main form label span, main form input[type="submit"] {
+        font-size: 1rem;
+    }
+}
