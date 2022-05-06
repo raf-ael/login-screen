@@ -1,3 +1,3 @@
-# Tela de Login
+# Login
 
-Tela de login responsiva desenvolvida com HTML5 e CSS3.
+Formulário de login responsivo desenvolvido com HTML5 e CSS3.
